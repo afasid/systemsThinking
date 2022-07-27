@@ -1,6 +1,7 @@
 # import libraries for random and mean functions
 import random
 import statistics
+rollArray = []
 
 # function to get total of rolled numbers
 def getTotal(array):
@@ -17,25 +18,20 @@ def getAvg(array):
 
 # First loop that controls prompting user input for number of rolls
 ii = 0
+
 while ii < 1:
   num = int(input('How many dice would you like to roll? '))
-  print("\n")
   i = 1
 
-  # stores dice rolled 
-  rollArray = []
-  
+    
   # second loop to roll dice based on user's input
   while i <= num:
 
     i += 1
-    rollArray.append(random.randint(1,6))
+    roll = random.randint(1,6)
+    print(roll)
+    rollArray.append(roll)
 
-  # Print the array, its total and mean values
-  print("Rolls list = " ,rollArray)
-  print("Total = ", getTotal(rollArray))
-  print("Avg = ", getAvg(rollArray))
-  print("***************************\n")
 
   # Prompt user to roll again. If input is 'y' then exit program
   ii += 1
@@ -43,4 +39,8 @@ while ii < 1:
     print("\n")
     ii = 0  
   else:
+    # Print the array, its total and mean values
+    print("Rolls list = " ,rollArray)
+    print("Total = ", getTotal(rollArray))
+    print("Avg = ", getAvg(rollArray))
     print('End')
